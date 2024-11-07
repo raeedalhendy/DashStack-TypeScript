@@ -104,7 +104,7 @@ export default function Home() {
                     </div>
                 </header>
 
-                <div className={`p-6 overflow-auto ${theme === 'dark' ? ' text-gray-900' : 'bg-gray-50'}`}>
+                <div className={`p-6 overflow-auto ${theme === 'dark' ? ' text-white' : 'text-black'}`}>
                     {location.pathname === "/Home" ? (
                         <p className="text-gray-500 text-4xl text-center mt-52">Please select from menu</p>
                     ) : (

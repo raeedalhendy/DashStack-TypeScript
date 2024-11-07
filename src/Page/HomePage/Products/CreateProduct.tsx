@@ -86,8 +86,8 @@ import { useNavigate } from "react-router";
         className="px-4 sm:px-6 pt-8 flex flex-col md:flex-row justify-between gap-6"
         >
         <div className="flex flex-col gap-5 w-full md:w-2/4">
-            <h1 className=" text-2xl font-extrabold text-gray-950 mt-2">Create Product</h1>
-            <h2 className="text-xl font-semibold text-gray-950">Product Name :</h2>
+            <h1 className=" text-2xl font-extrabold text-gray-500 mt-2">Create Product</h1>
+            <h2 className="text-xl font-semibold text-gray-500">Product Name :</h2>
             <input
             onChange={(e) => setProduct({ ...product, name: e.target.value })}
             value={product.name}
@@ -95,7 +95,7 @@ import { useNavigate } from "react-router";
             required
             placeholder="Enter Product Name"
             />
-            <h2 className=" text-xl font-semibold text-gray-950">Product Price :</h2>
+            <h2 className=" text-xl font-semibold text-gray-500">Product Price :</h2>
             <input
             onChange={(e) => setProduct({ ...product, price: e.target.value })}
             value={product.price}
@@ -115,7 +115,7 @@ import { useNavigate } from "react-router";
             <h1 className="text-4xl text-blue-500 mb-2">
                 <i className="fa-solid fa-arrow-up-from-bracket"></i>
             </h1>
-            <h1>Upload Product Image</h1>
+            <h1 className="text-gray-500">Upload Product Image</h1>
             </div>
             <input
             onChange={handleFileChange}

@@ -16,11 +16,11 @@ interface Product {
 export default function Products() {
     const navigate = useNavigate()
     const [data, setData] = useState<Product[]>([])
-    const [filteredData, setFilteredData] = useState<Product[]>([]) // لإظهار المنتجات المفلترة
+    const [filteredData, setFilteredData] = useState<Product[]>([]) 
     const token = localStorage.getItem("token")
 
     const [theme, setTheme] = useState<string>(localStorage.getItem("theme") || "light")
-    const { searchQuery } = useSearch();  // الحصول على قيمة البحث من الـ Context
+    const { searchQuery } = useSearch()  // الحصول على قيمة البحث من الـ Context
 
     useEffect(() => {
         if (theme === "dark") {
@@ -149,11 +149,11 @@ export default function Products() {
             <div className="flex flex-wrap gap-6 justify-center md:justify-start">
                 {filteredData.map((element) => (
                     <div key={element.id}
-                        className={`mx-3 mt-2 ${theme === 'light' ? ' text-white' : 'bg-gray-50 text-black'} 
+                        className={`mx-3 mt-2 ${theme === 'dark' ? ' text-white' : ' text-white'} 
                             rounded-2xl shadow-lg w-full md:w-72 flex flex-col shadow-gray-400 gap-3 justify-center items-center text-center relative`}>
                         <img className="w-2/4" src={element.image_url} alt={element.name} />
                         <div className="flex flex-col items-start w-full pl-3 gap-2">
-                            <h1 className={`font-bold text-xl ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                            <h1 className={`font-bold  text-xl ${theme === 'dark' ? 'text-white' : 'text-gray-500'}`}>
                                 {element.name}
                             </h1>
                             <h1 className={`font-semibold text-lg ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`}>
@@ -167,15 +167,15 @@ export default function Products() {
                                 <i className="fa-regular fa-pen-to-square"></i>
                                 Edit Product
                             </button>
-                            <button onClick={() => deleteItem(element.id)} className="text-2xl text-black hover:animate-bounce hover:text-red-700">
+                            <button onClick={() => deleteItem(element.id)} className="text-2xl text-gray-500 hover:animate-bounce hover:text-red-700">
                                 <i className="fa-regular fa-trash-can"></i>
                             </button>
                         </div>
                         <div className="w-full flex justify-between absolute top-0 px-3 pt-3">
-                            <button onClick={() => addToFavorite(element.id)} className="text-2xl text-black favorite hover:animate-bounce hover:text-blue-500">
+                            <button onClick={() => addToFavorite(element.id)} className="text-2xl text-gray-500 favorite hover:animate-bounce hover:text-blue-500">
                                 <i className="fa-regular fa-heart"></i>
                             </button>
-                            <button onClick={() => addToOrderList(element.id)} className="text-2xl text-black hover:animate-bounce hover:text-blue-500">
+                            <button onClick={() => addToOrderList(element.id)} className="text-2xl text-gray-500 hover:animate-bounce hover:text-blue-500">
                                 <i className="fa-solid fa-list-ul"></i>
                             </button>
                         </div>
