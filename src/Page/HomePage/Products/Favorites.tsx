@@ -33,7 +33,7 @@ export default function Favorites() {
 
   return (
     <div className="">
-        <div className="pl-7 pt-5 text-2xl font-extrabold">
+        <div className="pl-7     pt-5 text-2xl font-extrabold">
             <h1 className={`${theme === 'dark' ? 'text-white' : 'text-gray-500'}`}>Favorite</h1>
         </div>
         <div className="flex flex-wrap pt-4">
